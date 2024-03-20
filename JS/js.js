@@ -87,7 +87,7 @@ function LCM(m, n) {
 
 
 function mnLCM(m, n) {
-  // Функція для обчислення найбільшого спільного дільника (НСД)
+  
   function calculateGCD(a, b) {
     while (b !== 0) {
       let temp = b;
@@ -101,10 +101,10 @@ function mnLCM(m, n) {
   let min = Math.min(m, n);
   let max = Math.max(m, n);
   
-  // Знаходимо найбільший спільний дільник (НСД)
+  
   let gcd = calculateGCD(min, max);
   
-  // Обчислюємо НСК за формулою: НСК = (m * n) / НСД
+ 
   lcm = (m * n) / gcd;
   
   return lcm;
@@ -132,3 +132,23 @@ function frogContest(n) {
   res = `Chris ate ${chrisSummation} flies, Tom ate ${tomSummation} flies and Cat ate ${catSummation} flies`;
   console.log(res);
 }
+
+
+//=====================  Kata 7: Sum of the first nth term of Series  ===============================//
+
+function Sum(n) {
+  let res = 0;
+  let temp = 1;
+  if (n == 0) {
+    return res = '0.00'; 
+  } else {
+    
+    for (let i = 0; i < n; i++) {
+      res += 1 / temp;
+      temp += 3;
+    }
+  }
+  
+  return res.toFixed(2);
+}
+
