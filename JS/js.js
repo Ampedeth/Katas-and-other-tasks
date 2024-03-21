@@ -152,3 +152,36 @@ function Sum(n) {
   return res.toFixed(2);
 }
 
+
+//=====================  Kata 6: Will it balance?  ===============================//
+
+function willItBalance(stick,terrain) {
+  function sum(array) {
+    let total = 0
+    for (let i = 0; i < array.length; i++) {
+      total += array[i]
+    }
+    return total
+  }
+
+  function sumOfProducts(array) {
+    let total = 0
+    for (let i = 0; i < array.length; i++) {
+      total += array[i]*i
+    }
+    return total
+  }
+
+  let totalWeight  = sum(stick);
+  let totalProduct  = sumOfProducts(stick)
+  let res = totalProduct / totalWeight
+
+  if (1 == terrain[res]) {
+    return console.log('True');
+  } else if (terrain[Math.floor(res)] ==1 && (terrain[Math.ceil(res)] ==1 )) {
+    return console.log('True');
+  } else { return console.log('False'); }
+}
+let stick = [5,1,1]
+let terrain = [0,1,1]
+willItBalance(stick,terrain)
