@@ -182,6 +182,43 @@ function willItBalance(stick,terrain) {
     return console.log('True');
   } else { return console.log('False'); }
 }
-let stick = [5,1,1]
-let terrain = [0,1,1]
-willItBalance(stick,terrain)
+
+
+//=====================  Kata 7: Holiday II - Plane Seating  ===============================//
+
+function planeSeating(seatNumber) {
+  let num = parseInt(seatNumber);
+  let lett = seatNumber[seatNumber.length - 1];
+  let res = '';
+  let audit = /[A-H,K]/i;
+
+  function number(n) {
+    if (n >= 1 && n <= 20) {
+      return  'Front'
+    } else if (n >= 21 && n <= 40) {
+      return  'Middle'
+    } else {
+      return  'Back'
+    }
+  }
+  function letter(l) {
+    let test1 = /[a-c]/i;
+    let test2 = /[d-f]/i;
+    if (test1.test(l)) {
+      return '-Left'
+    } else if (test2.test(l)) {
+      return '-Middle'
+    } else {
+      return '-Right'
+    }
+  }
+
+  if (num > 60 || num < 1 || !audit.test(lett)) {
+    return console.log('No Seat!!');
+  } else {
+    res = number(num)
+    res += letter(lett)
+    return console.log(res); 
+  }
+  
+}
