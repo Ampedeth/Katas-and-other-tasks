@@ -222,3 +222,26 @@ function planeSeating(seatNumber) {
   }
   
 }
+
+//=====================  Kata 6: Each n-th element of list  ===============================//
+
+function each(num, array) {
+  let res = [];
+  if (num == 0) {
+    return console.log(res);
+  } else if (num > 0) {
+    for (let i = 1; i <= array.length; i++) {
+      if (i % num == 0)
+        res.push(i)
+    }
+    return console.log(res);
+  } else if (num < 0) {
+    num = Math.abs(num)
+    for (let i = array.length - 1; i >=0; i--) {
+      if ((array.length - i) % num == 0) {
+        res.push(array[i]);
+      }
+    }
+    return console.log(res)
+  }
+}
