@@ -245,3 +245,32 @@ function each(num, array) {
     return console.log(res)
   }
 }
+
+//=====================  Kata 7: Stone Pickaxe Crafting  ===============================//
+
+let craftItems = ["Cobblestone", "Cobblestone", "Cobblestone", "Cobblestone", "Cobblestone", "Cobblestone", "Wood"]
+function crafter(array) {
+  let Cobblestone = null;
+  let Sticks = null;
+  let res = 0;
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] == 'Cobblestone') {
+      Cobblestone += 1
+    } else if (array[i] == 'Sticks') {
+      Sticks += 1
+    } else if (array[i] == 'Wood') {
+      Sticks += 4
+    }
+  }
+  function difference () {
+    return Cobblestone -= 3, Sticks -=2
+  }
+  while (Cobblestone >= 3 && Sticks >= 2) {
+    res +=1
+    difference()
+  }
+  
+  
+  console.log(res);
+}
+crafter(craftItems)
