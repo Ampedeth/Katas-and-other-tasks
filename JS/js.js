@@ -273,4 +273,14 @@ function crafter(array) {
   
   console.log(res);
 }
-crafter(craftItems)
+
+//==============  Kata 7: Measuring Average Speed =====================//
+
+function averageSpeed(d, t) {
+  let distance = d.includes("km") ? parseFloat(d): parseFloat(d)/1000;
+  let time = t.includes("s") ? parseFloat(t) / 3600 : parseFloat(t) / 60;
+  let res = distance / time;
+  res *= 0.621371
+  console.log(res + 'mph');
+}
+averageSpeed('573km', '39min')
