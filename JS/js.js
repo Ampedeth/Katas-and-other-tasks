@@ -283,4 +283,24 @@ function averageSpeed(d, t) {
   res *= 0.621371
   console.log(res + 'mph');
 }
-averageSpeed('573km', '39min')
+
+//==============  Kata 5: The Hashtag Generator =====================//
+
+function hashtagGenerator(str) {
+  let res = '#';
+  str = str.replace(/\s+/g, ' ').trim()
+  if (str === undefined || str.length === 0) {
+    return false
+  } else {
+    str = str.split(' ');
+    str.forEach(element => {
+      element = element.replace(element[0], element[0].toUpperCase())      
+      res += element
+    });
+  }
+  if(res.length > 140){
+    return false
+  }else{
+    return res;
+  }
+}
